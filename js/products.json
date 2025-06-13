@@ -1,0 +1,105 @@
+{
+    "All":[
+    {
+    "imagen": "img/1.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 50,000"
+
+},
+    {
+    "imagen": "img/2.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 60,000"
+},
+{
+    "imagen": "img/3.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 70,000"
+},
+{
+    "imagen": "img/4.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 80,000"
+},
+{
+    "imagen": "img/5.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 90,000"
+},
+{
+    "imagen": "img/6.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 100,000"
+},
+{
+    "imagen": "img/7.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 100,000"
+},
+{
+    "imagen": "img/8.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 100,000"
+},
+{
+    "imagen": "img/9.png",
+    "description":"pellentesque eu, pretium quissem",
+    "precio": "$ 100,000"
+}
+],
+"BRAND":[{
+    "imagen":"img/toyota.png",
+    "name":"Toyota"
+},
+{ 
+    "imagen":"img/mercedez.png",
+    "name":"Mercedes"
+},
+    
+{ 
+    "imagen":"img/bmw1.png",
+    "name":"BMW"
+},
+{ 
+    "imagen":"img/mazda.png",
+    "name":"Mazda"
+}
+],
+"CATEGORIES":[{
+   
+    "name":"Toyota"
+},
+{ 
+   
+    "name":"Mercedes"
+},
+    
+{ 
+ 
+    "name":"BMW"
+},
+{ 
+
+    "name":"Mazda"
+},{
+   
+    "name":"Kia"
+},
+{ 
+   
+    "name":"Nissan"
+},
+    
+{ 
+ 
+    "name":"Chevrolet"
+},
+{ 
+
+    "name":"Ford"
+},
+{ 
+
+    "name":"Mustang"
+}
+]}
