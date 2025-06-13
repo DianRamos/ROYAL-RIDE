@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ROYAL RIDE PRODUCTS</title>
+    <meta name="description" content="" />
+
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700"
+      rel="stylesheet"
+      type="text/css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/templatemo-style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <section class="templatemo-top-section">
+      <div id="header"></div>
+      <div class="templatemo-welcome">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+              <img
+                src="img/welcome-img.png"
+                class="img-responsive welcome-img"
+                alt="Welcome" />
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+              <h2 class="text-uppercase">
+                <span class="welcome-title-1">We love your</span>
+                <span class="welcome-title-2">satisfaction</span>
+              </h2>
+              <p class="welcome-message">
+                You can visit ours oficial site <span class="blue">ROYAL</span
+                ><span class="green">RIDE</span>.com website. and know more abut
+                us and all reviews from our customers.
+              </p>
+              <a href="#" class="welcome-read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container margin-bottom-50">
+      <div class="row">
+        <h2 class="col-lg-12 text-center text-uppercase margin-bottom-30">
+          DISCOVER THE EXCLUSIVE BRANDS THAT ROYAL RIDE HAS FOR YOU
+        </h2>
+        <p class="col-lg-12 text-center margin-bottom-30">
+          Explore our curated selection of luxury vehicles from the world's most
+          prestigious brands. Each car is a masterpiece of engineering and
+          design, offering an unparalleled driving experience. From the sleek
+          lines of Porsche to the timeless elegance of Mercedes, discover the
+          perfect vehicle that reflects your style and passion for excellence.
+        </p>
+        <div class="col-lg-12 tm-overflow-hidden"></div>
+      </div>
+    </section>
+
+    <!--Main content-->
+    <section class="container margin-bottom-50">
+      <div class="tm-overflow-hidden row">
+        <div class="tm-gallery col-lg-9 col-md-9 col-sm-8 col-xs-12">
+          <h3 class="tm-gallery-title">ALL (53)</h3>
+          <div id="products-container"></div>
+        </div>
+        <aside class="tm-gallery-aside col-lg-3 col-md-3 col-sm-4 col-xs-12">
+          <nav class="tm-gallery-nav">
+            <h2 class="tm-gallery-nav-title">
+              Category <i class="fa fa-caret-up"></i>
+            </h2>
+            <ul></ul>
+          </nav>
+          <div class="tm-call-us">
+            <h3 class="text-uppercase tm-call-us-title">Call us</h3>
+            <a href="tel:" class="tm-call-us-link">+11 565 789 57</a>
+          </div>
+        </aside>
+      </div>
+
+      <!--banner-->
+      <div class="tm-banner">
+        <h2 class="tm-banner-title">Maecenas</h2>
+        <p class="tm-banner-description">
+          Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+          enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam
+          dictum felis eu pede mollis pretium
+        </p>
+        <a href="#" class="tm-banner-link"><i class="fa fa-play"></i></a>
+      </div>
+    </section>
+    <!-- Main content -->
+    <!--Footer content-->
+    <div id="footer"></div>
+    <!-- Footer content-->
+
+    <!-- JS -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript" src="js/templatemo-script.js"></script>
+    <script defer src="js/custom.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        cargarFragmento("header", "header.html");
+        cargarFragmento("footer", "footer.html");
+      });
+    </script>
+    <script>
+      fetch("js/products.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const products = data.All;
+          const container = document.getElementById("products-container");
+          container.innerHTML = products
+            .map(
+              (product) => `
+      <div class="tm-item-container">
+        <img src="${product.imagen}" alt="Producto" class="car">
+        <div class="tm-item-description">${product.description}</div>
+        <div class="tm-item-price">${product.precio}</div>
+        <a href="#" class="tm-item-link">
+              <span class="tm-item-action">Add to Cart</span>
+              <img src="img/plus.png" class="tm-item-add-icon" alt="Image" />
+            </a>
+      </div>
+    `
+            )
+            .join("");
+        });
+    </script>
+    <script>
+      fetch("js/products.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const brands = data.BRAND;
+          const container = document.querySelector(".tm-overflow-hidden");
+          brands.forEach((brand) => {
+            const brandDiv = document.createElement("div");
+            brandDiv.className = "tm-img-1-container";
+            brandDiv.innerHTML = `
+              <img src="${brand.imagen}" alt="${brand.name}" />
+              <p class="tm-img-1-description">${brand.name}</p>
+            `;
+            container.appendChild(brandDiv);
+          });
+        });
+    </script>
+    <script>
+      fetch("js/products.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const category = data.CATEGORIES;
+
+          const ul = document.querySelector(".tm-gallery-nav ul");
+          category.forEach((cat) => {
+            const li = document.createElement("li");
+            li.className = "active";
+            li.innerHTML = `
+        <a href="#">
+          <img src="img/gallery-list-icon.png"
+                class="tm-gallery-list-img"
+                alt="Image"  />
+          ${cat.name}
+          <i class="fa fa-caret-right tm-gallery-list-fa"></i>
+        </a>
+      `;
+            ul.appendChild(li);
+          });
+        });
+    </script>
+  </body>
+</html>
